@@ -1,28 +1,56 @@
+//
 // // client/src/App.js
-// import React, {useState} from 'react';
+// import React, { useState, useEffect } from 'react';
 // import Header from './components/Header/Header';
-// import Sidebar from "./components/Sidebar/Sidebar";
+// import Sidebar from './components/Sidebar/Sidebar';
+// import ProductCard from "./components/ProductCard/ProductCard";
+// import './App.css'
+// import axios from 'axios';
 //
 // const App = () => {
-//     const [selectedType, setSelectedType] = useState(null);
+//     const [products, setProducts] = useState([]);
+//     const [filteredProducts, setFilteredProducts] = useState([]);
 //
-//     const handleTypeSelect = (type) => {
-//         setSelectedType(type);
-//         // Здесь вы можете добавить логику для отображения только товаров выбранного типа
+//     useEffect(() => {
+//         axios.get('/api/products')
+//             .then(response => {
+//                 setProducts(response.data);
+//                 setFilteredProducts(response.data);
+//             })
+//             .catch(error => {
+//                 console.error('Ошибка получения товаров:', error);
+//             });
+//     }, []);
+//
+//
+//     const filterByType = (type) => {
+//         if (type === 'All') {
+//             setFilteredProducts(products);
+//         } else {
+//             const filtered = products.filter(product => product.type === type);
+//             setFilteredProducts(filtered);
+//         }
 //     };
 //
 //     return (
-//       <div>
-//         <Header />
-//           <div className="main-content">
-//           <Sidebar onTypeSelect={handleTypeSelect} />
-//           </div>
-//
-//           </div>
-//   );
+//         <div>
+//             <Header />
+//             <div className="container">
+//                 <Sidebar className="sidebar" filterByType={filterByType} />
+//                 <div className="products">
+//                     {products.map(product => (
+//                         <ProductCard key={product._id} product={product} />
+//                     ))}
+//                 </div>
+//                 {/* Главная область с карточками товаров */}
+//                 {/* ... */}
+//             </div>
+//         </div>
+//     );
 // };
 //
 // export default App;
+
 
 
 
@@ -32,6 +60,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
+import ProductCard from "./components/ProductCard/ProductCard";
+import './App.css'
 import axios from 'axios';
 
 const App = () => {
@@ -49,7 +79,6 @@ const App = () => {
             });
     }, []);
 
-
     const filterByType = (type) => {
         if (type === 'All') {
             setFilteredProducts(products);
@@ -64,8 +93,11 @@ const App = () => {
             <Header />
             <div className="container">
                 <Sidebar filterByType={filterByType} />
-                {/* Главная область с карточками товаров */}
-                {/* ... */}
+                <div className="products">
+                    {filteredProducts.map(product => (
+                        <ProductCard key={product._id} product={product} />
+                    ))}
+                </div>
             </div>
         </div>
     );

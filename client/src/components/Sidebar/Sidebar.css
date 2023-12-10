@@ -1,8 +1,9 @@
 /* client/src/components/Sidebar.css */
-.sidebar {
-    background-color: #f9f9f9;
+ .sidebar {
+    background-color: #f2f2f3;
     padding: 20px;
     width: 200px;
+    min-height: 50px;
 }
 
 .sidebar-heading {
