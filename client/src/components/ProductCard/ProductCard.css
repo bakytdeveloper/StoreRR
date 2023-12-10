@@ -9,6 +9,7 @@
     margin-right: 5px;
     box-sizing: border-box;
     text-align: center;
+    padding: 4px;
 }
 
 .product-image {
@@ -37,5 +38,5 @@
 .product-price {
     font-weight: bold;
     font-size: 1.1rem;
-    color: #3fc1e5;
+    color: #35adcf;
 }
