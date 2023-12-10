@@ -1,28 +1,82 @@
 
+/*!* client/src/components/ProductCard.css *!*/
+/*.card {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    width: calc(33.33% - 8px); !* 3 cards per row with 4px gap *!*/
+/*    margin-top: 5px;*/
+/*    margin-bottom: 8px;*/
+/*    margin-right: 5px;*/
+/*    box-sizing: border-box;*/
+/*    text-align: center;*/
+/*    padding: 4px;*/
+/*}*/
+
+/*.product-image {*/
+/*    width: 100%;*/
+/*    height: 65%;*/
+/*    object-fit: cover;*/
+/*    border-radius: 5px 5px 0 0;*/
+/*}*/
+
+/*.product-details {*/
+/*    padding: 10px;*/
+/*    background-color: #f9f9f9;*/
+/*    border-radius: 0 0 5px 5px;*/
+/*}*/
+
+/*.product-name {*/
+/*    margin-bottom: 5px;*/
+/*    font-size: 1.2rem;*/
+/*}*/
+
+/*.product-description {*/
+/*    margin-bottom: 10px;*/
+/*    font-size: 0.9rem;*/
+/*}*/
+
+/*.product-price {*/
+/*    font-weight: bold;*/
+/*    font-size: 1.1rem;*/
+/*    color: #35adcf;*/
+/*}*/
+
+
+
+
+
 /* client/src/components/ProductCard.css */
+
 .card {
     display: flex;
     flex-direction: column;
     width: calc(33.33% - 8px); /* 3 cards per row with 4px gap */
+    height: 500px; /* Высота карточки */
     margin-top: 5px;
     margin-bottom: 8px;
     margin-right: 5px;
     box-sizing: border-box;
     text-align: center;
     padding: 4px;
+    border-radius: 5px;
+    overflow: hidden; /* Добавим скрытие изображения, чтобы избежать обрезания */
 }
 
 .product-image {
     width: 100%;
-    height: 65%;
-    object-fit: cover;
+    height: 65%; /* Высота 65% от общей высоты карточки */
+    object-fit: contain; /* Изображение не будет обрезаться, сохраняя пропорции */
     border-radius: 5px 5px 0 0;
 }
 
 .product-details {
+    height: 35%; /* Оставшаяся часть высоты карточки */
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 0 0 5px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-name {
