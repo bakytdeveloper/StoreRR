@@ -1,0 +1,28 @@
+/* client/src/components/Sidebar.css */
+.sidebar {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 200px;
+}
+
+.sidebar-heading {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.types-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.types-list li {
+    padding: 5px 0;
+    cursor: pointer;
+    color: #555;
+}
+
+.types-list li:hover {
+    color: #000;
+    font-weight: bold;
+}
