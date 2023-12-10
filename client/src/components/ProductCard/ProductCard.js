@@ -2,9 +2,9 @@
 import React from 'react';
 import './ProductCard.css';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, openModal }) => {
     return (
-        <div className="card">
+        <div className="card" onClick={openModal}>
             <img className="product-image" src={product.image} alt={product.name} />
             <div className="product-details">
                 <h2 className="product-name">{product.name}</h2>
