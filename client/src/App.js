@@ -22,7 +22,6 @@
 //             });
 //     }, []);
 //
-//
 //     const filterByType = (type) => {
 //         if (type === 'All') {
 //             setFilteredProducts(products);
@@ -36,14 +35,12 @@
 //         <div>
 //             <Header />
 //             <div className="container">
-//                 <Sidebar className="sidebar" filterByType={filterByType} />
+//                 <Sidebar filterByType={filterByType} />
 //                 <div className="products">
-//                     {products.map(product => (
+//                     {filteredProducts.map(product => (
 //                         <ProductCard key={product._id} product={product} />
 //                     ))}
 //                 </div>
-//                 {/* Главная область с карточками товаров */}
-//                 {/* ... */}
 //             </div>
 //         </div>
 //     );
@@ -55,18 +52,18 @@
 
 
 
-
 // client/src/App.js
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import ProductCard from "./components/ProductCard/ProductCard";
-import './App.css'
+import './App.css';
 import axios from 'axios';
 
 const App = () => {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         axios.get('/api/products')
@@ -88,9 +85,24 @@ const App = () => {
         }
     };
 
+    const handleSearch = (searchValue) => {
+        setSearchTerm(searchValue);
+
+        if (searchValue === '') {
+            setFilteredProducts(products);
+        } else {
+            const filtered = products.filter(
+                product =>
+                    product.name.toLowerCase().includes(searchValue) ||
+                    product.description.toLowerCase().includes(searchValue)
+            );
+            setFilteredProducts(filtered);
+        }
+    };
+
     return (
         <div>
-            <Header />
+            <Header handleSearch={handleSearch} searchTerm={searchTerm} />
             <div className="container">
                 <Sidebar filterByType={filterByType} />
                 <div className="products">
@@ -104,3 +116,4 @@ const App = () => {
 };
 
 export default App;
+

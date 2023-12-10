@@ -51,7 +51,7 @@
 .products {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end; /* Располагаем карточки справа */
+  justify-content: flex-start; /* Изменено на flex-start */
 }
 
 .card {
