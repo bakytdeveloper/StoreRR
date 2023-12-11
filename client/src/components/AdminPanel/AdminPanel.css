@@ -1,0 +1,436 @@
+/* client/src/components/AdminPanel/AdminPanel.css */
+/*.admin-panel {*/
+/*!*    max-width: 600px;*!*/
+/*!*    margin: 110px auto;*!*/
+/*!*    padding: 20px;*!*/
+/*!*    background-color: #fff;*!*/
+/*!*    border: 1px solid #ddd;*!*/
+/*!*    border-radius: 8px;*!*/
+/*!*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*!*/
+/*!*}*!*/
+
+/*!*label {*!*/
+/*!*    display: block;*!*/
+/*!*    margin-bottom: 10px;*!*/
+/*!*}*!*/
+
+/*!*input,*!*/
+/*!*textarea,*!*/
+/*!*button {*!*/
+/*!*    width: 100%;*!*/
+/*!*    padding: 10px;*!*/
+/*!*    margin-bottom: 15px;*!*/
+/*!*    font-size: 16px;*!*/
+/*!*    border: 1px solid #ddd;*!*/
+/*!*    border-radius: 4px;*!*/
+/*!*}*!*/
+
+/*!*.image-input input {*!*/
+/*!*    display: none;*!*/
+/*!*}*!*/
+
+/*!*.image-preview {*!*/
+/*!*    width: 100%;*!*/
+/*!*    max-height: 150px;*!*/
+/*!*    object-fit: contain;*!*/
+/*!*    margin-top: 10px;*!*/
+/*!*    border: 1px solid #ddd;*!*/
+/*!*    border-radius: 4px;*!*/
+/*!*}*!*/
+
+/*!*.specification-input {*!*/
+/*!*    display: flex;*!*/
+/*!*    margin-bottom: 10px;*!*/
+/*!*}*!*/
+
+/*!*.specification-input input {*!*/
+/*!*    flex: 1;*!*/
+/*!*    margin-right: 10px;*!*/
+/*!*}*!*/
+
+/*!*.specification-input button {*!*/
+/*!*    padding: 5px;*!*/
+/*!*    background-color: #ff6262;*!*/
+/*!*    color: #fff;*!*/
+/*!*    border: none;*!*/
+/*!*    border-radius: 4px;*!*/
+/*!*    cursor: pointer;*!*/
+/*!*}*!*/
+
+/*!*.specification-input button:hover {*!*/
+/*!*    background-color: #ff4646;*!*/
+/*!*}*!*/
+
+/*!*button {*!*/
+/*!*    background-color: #4caf50;*!*/
+/*!*    color: #fff;*!*/
+/*!*    border: none;*!*/
+/*!*    border-radius: 4px;*!*/
+/*!*    cursor: pointer;*!*/
+/*!*}*!*/
+
+/*!*button:hover {*!*/
+/*!*    background-color: #45a049;*!*/
+/*!*}*!*/
+
+
+
+/*//!*!* client/src/components/AdminPanel/AdminPanel.css *!*!*!*/
+/*!*.admin-panel {*!*/
+/*!*    max-width: 800px;*!*/
+/*!*    margin: 0 auto;*!*/
+/*!*    padding: 20px;*!*/
+/*!*}*!*/
+
+/*!*.edit-list {*!*/
+/*!*    display: flex;*!*/
+/*!*    flex-direction: column;*!*/
+/*!*    margin-bottom: 20px;*!*/
+/*!*}*!*/
+
+/*!*.edit-item {*!*/
+/*!*    display: flex;*!*/
+/*!*    align-items: center;*!*/
+/*!*    justify-content: space-between;*!*/
+/*!*    margin-bottom: 10px;*!*/
+/*!*}*!*/
+
+/*!*.image-input {*!*/
+/*!*    margin-top: 10px;*!*/
+/*!*}*!*/
+
+/*!*.image-preview-container {*!*/
+/*!*    position: relative;*!*/
+/*!*    margin-top: 10px;*!*/
+/*!*}*!*/
+
+/*!*.image-preview {*!*/
+/*!*    max-width: 100%;*!*/
+/*!*    max-height: 150px;*!*/
+/*!*    margin-bottom: 5px;*!*/
+/*!*}*!*/
+
+/*!*.image-preview button {*!*/
+/*!*    position: absolute;*!*/
+/*!*    top: 0;*!*/
+/*!*    right: 0;*!*/
+/*!*    background-color: red;*!*/
+/*!*    color: white;*!*/
+/*!*    border: none;*!*/
+/*!*    padding: 5px;*!*/
+/*!*    cursor: pointer;*!*/
+/*!*}*!*/
+
+/*!*.specification-input {*!*/
+/*!*    display: flex;*!*/
+/*!*    margin-top: 10px;*!*/
+/*!*}*!*/
+
+/*!*.specification-input input {*!*/
+/*!*    margin-right: 5px;*!*/
+/*!*}*!*/
+
+/*!*.specification-input button {*!*/
+/*!*    background-color: red;*!*/
+/*!*    color: white;*!*/
+/*!*    border: none;*!*/
+/*!*    padding: 5px;*!*/
+/*!*    cursor: pointer;*!*/
+/*!*}*!*/
+
+/*!*.specification-input button:hover {*!*/
+/*!*    background-color: darkred;*!*/
+/*!*}*!*/
+
+
+
+
+
+
+/*!*    !* client/src/components/AdminPanel/AdminPanel.css *!*!*/
+/*!*.admin-panel {*!*/
+/*!*    max-width: 600px;*!*/
+/*!*    margin: 110px auto;*!*/
+/*!*    padding: 20px;*!*/
+/*!*    background-color: #fff;*!*/
+/*!*    border: 1px solid #ddd;*!*/
+/*!*    border-radius: 8px;*!*/
+/*!*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*!*/
+/*!*}*!*/
+
+/*!*label {*!*/
+/*!*    display: block;*!*/
+/*!*    margin-bottom: 10px;*!*/
+/*!*}*!*/
+
+/*!*input,*!*/
+/*!*textarea,*!*/
+/*!*button {*!*/
+/*!*    width: 100%;*!*/
+/*!*    padding: 10px;*!*/
+/*!*    margin-bottom: 15px;*!*/
+/*!*    font-size: 16px;*!*/
+/*!*    border: 1px solid #ddd;*!*/
+/*!*    border-radius: 4px;*!*/
+/*!*}*!*/
+
+/*!*.image-input input {*!*/
+/*!*    display: none;*!*/
+/*!*}*!*/
+
+/*!*.image-preview {*!*/
+/*!*    width: 100%;*!*/
+/*!*    max-height: 150px;*!*/
+/*!*    object-fit: contain;*!*/
+/*!*    margin-top: 10px;*!*/
+/*!*    border: 1px solid #ddd;*!*/
+/*!*    border-radius: 4px;*!*/
+/*!*}*!*/
+
+/*!*.specification-input {*!*/
+/*!*    display: flex;*!*/
+/*!*    margin-bottom: 10px;*!*/
+/*!*}*!*/
+
+/*!*.specification-input input {*!*/
+/*!*    flex: 1;*!*/
+/*!*    margin-right: 10px;*!*/
+/*!*}*!*/
+
+/*!*.specification-input button {*!*/
+/*!*    padding: 5px;*!*/
+/*!*    background-color: #ff6262;*!*/
+/*!*    color: #fff;*!*/
+/*!*    border: none;*!*/
+/*!*    border-radius: 4px;*!*/
+/*!*    cursor: pointer;*!*/
+/*!*}*!*/
+
+/*!*.specification-input button:hover {*!*/
+/*!*    background-color: #ff4646;*!*/
+/*!*}*!*/
+
+/*!*button {*!*/
+/*!*    background-color: #4caf50;*!*/
+/*!*    color: #fff;*!*/
+/*!*    border: none;*!*/
+/*!*    border-radius: 4px;*!*/
+/*!*    cursor: pointer;*!*/
+/*!*}*!*/
+
+/*!*button:hover {*!*/
+/*!*    background-color: #45a049;*!*/
+/*!*}*!*/
+
+
+
+/*!* client/src/components/AdminPanel/AdminPanel.css *!*/
+/*.admin-panel {*/
+/*    max-width: 800px;*/
+/*    margin: 0 auto;*/
+/*    padding: 20px;*/
+/*}*/
+
+/*.edit-list {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*.edit-item {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.image-input {*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*.image-preview-container {*/
+/*    position: relative;*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*.image-preview {*/
+/*    max-width: 100%;*/
+/*    max-height: 150px;*/
+/*    margin-bottom: 5px;*/
+/*}*/
+
+/*.image-preview button {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*    background-color: red;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    padding: 5px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.specification-input {*/
+/*    display: flex;*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*.specification-input input {*/
+/*    margin-right: 5px;*/
+/*}*/
+
+/*.specification-input button {*/
+/*    background-color: red;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    padding: 5px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.specification-input button:hover {*/
+/*    background-color: darkred;*/
+/*}*/
+
+
+
+
+/*/!* client/src/components/AdminPanel/AdminPanel.css *!*/
+.admin-panel {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+    color: #343a40;
+}
+
+.edit-list {
+    margin-bottom: 20px;
+}
+
+.edit-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.edit-item button {
+    background-color: #dc3545;
+    color: #d0d0d0;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.edit-item button:hover {
+    background-color: #bd2130;
+}
+
+.edit-item span {
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.image-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-preview-container {
+    position: relative;
+    margin-top: 10px;
+}
+
+.image-preview {
+    max-width: 100%;
+    max-height: 150px;
+    margin-bottom: 5px;
+}
+
+.image-preview button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.image-preview button:hover {
+    background-color: #bd2130;
+}
+
+.specification-input {
+    display: flex;
+    margin-top: 10px;
+}
+
+.specification-input input {
+    margin-right: 5px;
+    flex-grow: 1;
+}
+
+.specification-input button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.specification-input button:hover {
+    background-color: #bd2130;
+}
+
+button {
+    align-self: flex-start;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
