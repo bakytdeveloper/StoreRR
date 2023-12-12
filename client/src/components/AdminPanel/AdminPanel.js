@@ -1025,6 +1025,51 @@ const AdminPanel = () => {
         }
     };
 
+    // const handleSubmit = async (event) => {
+    //     event.preventDefault();
+    //
+    //     const formData = new FormData();
+    //     formData.append('name', productName);
+    //     formData.append('description', productDescription);
+    //     formData.append('type', productType);
+    //     formData.append('price', productPrice);
+    //     formData.append('image', mainImage);
+    //     secondaryImages.forEach((image, index) => {
+    //         formData.append(`secondaryImages[${index}]`, image);
+    //     });
+    //     specifications.forEach((spec, index) => {
+    //         formData.append(`specifications[${index}][key]`, spec.key);
+    //         formData.append(`specifications[${index}][value]`, spec.value);
+    //     });
+    //
+    //     try {
+    //         if (editingProductId) {
+    //             await axios.put(`/api/products/${editingProductId}`, formData);
+    //             // await axios.put(`/api/products/editProduct/${editingProductId}`, formData);
+    //             setEditingProductId(null);
+    //         } else {
+    //             const response = await axios.post('/api/products', formData);
+    //             // const response = await axios.post('/api/products/addProduct', formData);
+    //             setProducts([...products, response.data]);
+    //         }
+    //
+    //         setProductName('');
+    //         setProductDescription('');
+    //         setProductType('');
+    //         setProductPrice('');
+    //         setMainImage(null);
+    //         setMainImagePreview('');
+    //         setSecondaryImages([]);
+    //         setSpecifications([{ key: '', value: '' }]);
+    //     } catch (error) {
+    //         console.error('Ошибка при добавлении/редактировании товара:', error);
+    //     }
+    // };
+
+
+
+
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -1034,9 +1079,11 @@ const AdminPanel = () => {
         formData.append('type', productType);
         formData.append('price', productPrice);
         formData.append('image', mainImage);
+
         secondaryImages.forEach((image, index) => {
             formData.append(`secondaryImages[${index}]`, image);
         });
+
         specifications.forEach((spec, index) => {
             formData.append(`specifications[${index}][key]`, spec.key);
             formData.append(`specifications[${index}][value]`, spec.value);
@@ -1044,15 +1091,30 @@ const AdminPanel = () => {
 
         try {
             if (editingProductId) {
-                await axios.put(`/api/products/${editingProductId}`, formData);
-                // await axios.put(`/api/products/editProduct/${editingProductId}`, formData);
+                // Если выбран новый файл изображения, добавим его в FormData
+                if (mainImage) {
+                    formData.append('newImage', mainImage);
+                }
+
+                const response = await axios.put(`/api/products/${editingProductId}`, formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                });
+
                 setEditingProductId(null);
+                setProducts(products.map(product => (product._id === editingProductId ? response.data : product)));
             } else {
-                const response = await axios.post('/api/products', formData);
-                // const response = await axios.post('/api/products/addProduct', formData);
+                const response = await axios.post('/api/products', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                });
+
                 setProducts([...products, response.data]);
             }
 
+            // Очистка полей формы
             setProductName('');
             setProductDescription('');
             setProductType('');
@@ -1065,6 +1127,10 @@ const AdminPanel = () => {
             console.error('Ошибка при добавлении/редактировании товара:', error);
         }
     };
+
+
+
+
 
     return (
         <div className="admin-panel">
